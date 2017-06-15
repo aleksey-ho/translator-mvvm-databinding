@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="aleksey.khokhrin.ru.translator.viewModel.BookmarkItemViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewItemHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageFavourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:layout_margin="14dp"
+                android:background="@{viewModel.imageFavourite}"
+                android:onClick="@{viewModel::onSaveAsFavouriteClick}"
+                android:layout_gravity="center"
+                />
+
+            <!--android:background="@drawable/ic_bookmark_black_24dp"-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewModel::onShowClick}">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@android:color/black"
+                        android:text="@{viewModel.textSource}"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@{viewModel.textTarget}"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:onClick="@{viewModel::onShowClick}">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:text="@{viewModel.translate.languageSource.code.toUpperCase()}"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:text="-"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:text="@{viewModel.translate.languageTarget.code.toUpperCase()}"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

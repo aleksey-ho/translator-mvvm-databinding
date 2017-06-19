@@ -7,3 +7,5 @@ Translator uses:
 * NYTimes Store for caching
 * Retrofit2 for networking
 * Yandex API
+
+![translator.gif](https://github.com/aleksey-ho/translator-mvvm-databinding/blob/master/translator.gif)

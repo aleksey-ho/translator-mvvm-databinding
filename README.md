@@ -8,4 +8,4 @@ Translator uses:
 * Retrofit2 for networking
 * Yandex API
 
-![translator.gif](https://github.com/aleksey-ho/translator-mvvm-databinding/blob/master/translator.gif)
+<img src="https://github.com/aleksey-ho/translator-mvvm-databinding/blob/master/translator.gif" height="400" />
